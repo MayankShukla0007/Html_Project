@@ -1,0 +1,157 @@
+@import url(https://fonts.google.com/share?selection.family=Yellowtail);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+hmtl, body{
+    width: 100%;
+    min-height: 100vh;
+    background: #0a0119;
+}
+
+.page1{
+    position: relative;
+    color: white;
+    overflow: hidden;
+}
+
+nav{
+    height: 5rem;
+    padding: 2rem 3rem 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;/* to remove the underline or style it differently (like dashed or wavy).*/
+    color: white;
+}
+
+nav h1{
+    font-size: 2rem; /* this is use change the text size in nav inside h1 heading */
+    font-family:"yellowtail",cursive; /*use the google font(Yellowtail) change the character style h1(Devwave..)*/
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navigation{
+    position: relative;
+    display: flex;
+    gap: 2rem; /* gap( this the generate the gap of "Navigation"(Home , About and contact)).*/
+    z-index: 1;
+}
+
+.navigation{
+     font-size: 1.2rem; /* This is dicide of Navigation size(Home , About and contact).*/
+     text-transform: uppercase;
+}
+
+.main{
+    height: calc(100vh -5rem);
+    display: flex;
+}
+
+.main .left{
+    width: 60%; 
+    padding: 2rem 4rem 2rem 4rem; /*top: 2rem, right: 4rem,bottom: 2rem,left: 4rem . */
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main .left h1{
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+.main .left p{
+    width: 80%;
+    font-size: 0.9rem;
+    color: gray;
+    mix-blend-mode: exclusion;
+}
+
+.btn{
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    z-index: 1;
+}
+/* #Contact(Contact Us botton ) and #Started (Get Started botton). */
+#contact, #started{
+    position: relative;
+    width: 12rem;
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 1.3rem;
+    border-radius: 30px;
+    background: white;
+    color: #0b021c;
+    cursor: pointer; /* change mouse cursor desgin(target finger).*/
+    overflow: hidden;
+    transition: o.75s;
+    border: 2px solid white;
+    z-index: 2;
+}
+
+#started{
+    background: transparent;
+    color: white;
+}
+
+#started::before, #contact::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+    clip-path: circle(0% at 50% 50%);
+    transition: 0.75s;
+    z-index: -1;
+}
+
+#started:hover::before, #contact:hover::before{
+    clip-path: circle(100% at 50% 50%);
+}
+
+#started:hover{
+    color: #0b021c;
+}
+
+#contact:hover{
+    background: #3e108a;
+    filter: blur(2px);
+}
+
+.page1::before{
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: -5%;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    background: #8665e4;
+    filter: blur(120px);
+}
+
+.page1::after{
+    content: '';
+    position: absolute;
+     top: 10%;
+    right: -5%;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    background: #8665e4;
+    filter: blur(100px);
+}
+
+
+
