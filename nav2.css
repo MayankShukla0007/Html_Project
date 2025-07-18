@@ -1,0 +1,10 @@
+*{
+  text-decoration: none;
+}
+
+.navbar{
+  background: crimson;
+  font-family: 'calibri';
+  padding-right: 15px;
+  padding-left: 15px;
+}
