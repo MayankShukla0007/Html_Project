@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-container button:hover {
+      background-color: #45a049;
+    }
+
+    .message {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Enter your name">
+    <input type="password" id="password" placeholder="Enter your password">
+    <button onclick="login()">Login</button>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    // Predefined users (in real apps, this would be on the server)
+    const users = [
+      { username: "mayank", password: "Mayank1234" },
+      { username: "admin", password: "Admin@2024" },
+      { username: "user1", password: "pass123" }
+    ];
+
+    function login() {
+      const inputUsername = document.getElementById('username').value.trim().toLowerCase();
+      const inputPassword = document.getElementById('password').value;
+      const messageDiv = document.getElementById('message');
+
+      const user = users.find(u => u.username === inputUsername && u.password === inputPassword);
+
+      if (user) {
+        messageDiv.style.color = "green";
+        messageDiv.innerText = `Login successful! Welcome, ${user.username}.`;
+        
+        // Redirect after 2 seconds (example to home.html)
+        setTimeout(() => {
+          window.location.href = "home.html"; // <-- Change to your actual page
+        }, 2000);
+
+      } else {
+        messageDiv.style.color = "red";
+        messageDiv.innerText = "Invalid username or password.";
+      }
+    }
+  </script>
+
+</body>
+</html>
